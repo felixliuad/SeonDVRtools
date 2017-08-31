@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{%block content%}
+<form action="/download" method="post" target="_blank">
+    <div class="form-group row">
+        <label for="ID_DVR_IP" class="col-2 col-form-label">DVR IP address</label>
+        <div class="col-10">
+            <input class="form-control" type="text" value="10.18.22.4" id="ID_DVR_IP" name="InputDvrIP"
+                   placeholder="172.30.67.11" required>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="TimezoneInput" class="col-2 col-form-label">Timezone(hour)</label>
+        <div class="col-10">
+            <input class="form-control" type="number" value="-8" id="TimezoneInput" name="InputTZ" required>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="DSTInput" class="col-2 col-form-label">Daylightsaving Offset(hour)</label>
+        <div class="col-10">
+            <input class="form-control" type="number" value="1" id="DSTInput" name="InputDST" required>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="StartDateTimeInput" class="col-2 col-form-label">Start Date and time</label>
+        <div class="col-10">
+            <input class="form-control" type="datetime-local" value="2017-08-30T00:10:00"
+                   id="StartDateTimeInput" name="InputStartDateTime" min="2001-01-01T00:00:00"
+                   max="2099-12-31T00:00:00">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="EndDateTimeInput" class="col-2 col-form-label">End Date and time</label>
+        <div class="col-10">
+            <input class="form-control" type="datetime-local" value="2017-08-30T02:45:00"
+                   id="EndDateTimeInput" name="InputEndDateTime" min="2001-01-01T00:00:00" max="2099-12-31T00:00:00">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-warning btn-form">Download</button>
+</form>
+{%endblock%}
